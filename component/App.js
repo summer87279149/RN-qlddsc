@@ -22,7 +22,7 @@ import ShoppingCart from './Shoppingcart/ShoppingCart'
 var {height,width} =  Dimensions.get('window');
 
 
-
+//config item of Tab
 const HomeStack = createStackNavigator({
   Home: {
     screen:Home,
@@ -60,7 +60,7 @@ const MySettingStack = createStackNavigator({
 });
 
 
-
+//配置Tab
 export default createBottomTabNavigator({
 
   HomeTab: {
@@ -119,7 +119,7 @@ export default createBottomTabNavigator({
 },{
   initialRouteName:"HomeTab",
   tabBarOptions:{
-    activeTintColor:"red",
+    activeTintColor:"red",//
     inactiveTintColor:"grey",
   }
 
