@@ -1,4 +1,6 @@
 import { AppRegistry } from 'react-native';
-import App from './component/App';
-import { YellowBox } from 'react-native'; YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
-AppRegistry.registerComponent('qlddsc', () => App);
+import Root from './component/Root';
+import { YellowBox } from 'react-native'; YellowBox.ignoreWarnings(
+    ['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);//去掉黄色警告
+
+AppRegistry.registerComponent('qlddsc', () => Root);
