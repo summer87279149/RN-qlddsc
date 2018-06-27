@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text,  } from 'react-native';
+import { View, Text,Button  } from 'react-native';
 
 class MySetting extends Component {
 
@@ -12,6 +12,8 @@ class MySetting extends Component {
     return (
       <View>
         <Text> MySetting </Text>
+        <Button onPress={() => this.props.navigation.navigate('LoginModal')}  title="打开登入页"
+          color="#fff"> </Button>
       </View>
     );
   }

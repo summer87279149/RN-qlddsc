@@ -17,8 +17,10 @@ import { createStackNavigator,createBottomTabNavigator } from 'react-navigation'
 import Catagroy from './Catagroy/Catagroy'
 import Home from './Home/Home.js'
 import MySetting from './MySetting/MySetting'
+import LoginModal from './MySetting/LoginModal'
 import New from './New/New'
 import ShoppingCart from './Shoppingcart/ShoppingCart'
+
 var {height,width} =  Dimensions.get('window');
 
 
@@ -58,6 +60,21 @@ const ShoppingCartStack = createStackNavigator({
 const MySettingStack = createStackNavigator({
   MySetting: MySetting,
 });
+
+const MySettingModalStack = createStackNavigator(
+  {
+    Main: {
+      screen: MySettingStack,
+    },
+    LoginModal: {
+      screen: LoginModal,
+    },
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  }
+);
 
 
 //配置Tab
@@ -105,7 +122,7 @@ export default createBottomTabNavigator({
   }),
   },
   MySettingTab:{
-    screen:MySettingStack,
+    screen:MySettingModalStack,
     navigationOptions: ({ navigation }) => ({
       title: "我的",
       tabBarIcon:({focused,tintColor})=>{

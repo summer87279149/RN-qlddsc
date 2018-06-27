@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text,  } from 'react-native';
+import { View, Text,Button  } from 'react-native';
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -15,7 +15,9 @@ class Home extends Component {
   render() {
     return (
       <View>
-        <Text> Home </Text>
+        <Text> Home 2{this.props.name}</Text>
+        <Button onPress={() => this.props.navigation.navigate('LoginModal')}  title="打开登入页"
+          color="#fff"> </Button>
       </View>
     );
   }
@@ -25,7 +27,7 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   return {
-    // userinfo: state.userinfo
+    name: state.userinfo.name
   }
 }
 
